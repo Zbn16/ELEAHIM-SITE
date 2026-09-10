@@ -30,9 +30,26 @@ body {
     pointer-events: none;
 }
 
+.character-image {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: clamp(8rem, 18vw, 13rem);
+    height: auto;
+    pointer-events: none;
+}
+
+.character-image-left {
+    left: 1rem;
+}
+
+.character-image-right {
+    right: 1rem;
+}
+
 .site-header {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: min(100%, 44rem);
     padding: clamp(2rem, 7vw, 4.5rem) clamp(1.25rem, 6vw, 4rem);
     text-align: center;
@@ -43,12 +60,13 @@ h1 {
     font-size: clamp(2.6rem, 10vw, 6rem);
     line-height: 1;
     letter-spacing: 0.16em;
+    color: #000;
     text-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.35);
 }
 
 .tagline {
     margin: 1rem 0 2rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #000;
     font-size: clamp(0.9rem, 2vw, 1.05rem);
     letter-spacing: 0.08em;
 }
@@ -108,3 +126,6 @@ h1 {
     border: 0;
 }
 
+p {
+  color: rgb(0, 0, 0);
+}

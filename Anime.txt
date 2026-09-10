@@ -1,0 +1,5 @@
+<img class="character-image character-image-left" src="assets/121058-tv-todoroki-shoto-character-free-download-png-hd.png" alt="" aria-hidden="true">
+  <img class="character-image character-image-right" src="assets/125003-boy-anime-sad-png-download-free.png" alt="" aria-hidden="true">
+  <header class="site-header">
+
+  Place under video tag
