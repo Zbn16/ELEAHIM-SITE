@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/main.css">
-    <title>Document</title>
+    <title>ELEAHIM Search</title>
 </head>
 <body>
+  <video class="background-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="assets/backgrounds/minecraft-misty-forest-live-wallpaper.mp4" type="video/mp4">
+  </video>
+  <div class="background-overlay" aria-hidden="true"></div>
   <header class="site-header">
     <h1>ELEAHIM</h1>
-    <form class="search-form" role="search">
+    <p class="tagline">Find your next adventure</p>
+    <form class="search-form" action="https://www.google.com/search" method="get" role="search">
       <label class="sr-only" for="site-search">Search</label>
-      <input id="site-search" type="search" placeholder="Search" />
+      <input id="site-search" name="q" type="search" placeholder="Search the web" autocomplete="off" />
       <button type="submit" aria-label="Submit search">&#128269;</button>
     </form>
   </header>
