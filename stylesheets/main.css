@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    background: transparent;
+}
+
 body {
     min-height: 100vh;
     margin: 0;
@@ -10,32 +15,24 @@ body {
     place-items: center;
     overflow: hidden;
     padding: 1.5rem;
-    background-color: #17231d;
     color: #fff;
     font-family: "Trebuchet MS", Verdana, sans-serif;
 }
 
-.background-video,
-.background-overlay {
+.background-video {
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
-}
-
-.background-video {
+    display: block;
     z-index: 0;
     object-fit: cover;
-}
-
-.background-overlay {
-    z-index: 1;
-    background: linear-gradient(135deg, rgba(10, 20, 15, 0.7), rgba(12, 25, 30, 0.38));
+    pointer-events: none;
 }
 
 .site-header {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: min(100%, 44rem);
     padding: clamp(2rem, 7vw, 4.5rem) clamp(1.25rem, 6vw, 4rem);
     border-radius: 2rem;
