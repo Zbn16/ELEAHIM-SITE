@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/game.css">
+    <title>ELEAHIM Games</title>
+</head>
+<body>
+    <video class="game-background" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="assets/backgrounds/minecraft-nebula-night-live-wallpaper.mp4" type="video/mp4">
+    </video>
+    <main class="game-page">
+        <nav class="game-nav" aria-label="Page navigation">
+            <a href="index.html">Back to index.html</a>
+        </nav>
+        <section id="games" class="game-list" aria-labelledby="games-heading">
+            <div class="games-heading">
+                <label class="game-search">
+                    <input id="game-search" type="search" placeholder="Search games" autocomplete="off">
+                    <button type="button" aria-label="Search games">&#128269;</button>
+                </label>
+            </div>
+            <div class="game-circles" id="game-circles"></div>
+        </section>
+
+        <section class="play-panel" id="play-panel" aria-labelledby="playing-title" hidden>
+            <div class="play-toolbar">
+                <h2 id="playing-title">Game</h2>
+                <div class="play-actions">
+                    <button id="new-tab" type="button">New tab</button>
+                    <button id="full-screen" type="button">Fullscreen</button>
+                    <button id="close-game" type="button" aria-label="Close game">Close</button>
+                </div>
+            </div>
+            <iframe id="game-frame" title="Playable game" src="about:blank" allow="fullscreen; gamepad" loading="lazy"></iframe>
+        </section>
+    </main>
+    <script src="scripts/game.js?v=3"></script>
+</body>
+</html>

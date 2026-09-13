@@ -1,0 +1,249 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    overflow-x: hidden;
+    color: #fff;
+    background: #101312;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.game-background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+body::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(10, 13, 12, 0.64);
+    content: "";
+}
+
+.game-page {
+    width: min(100%, 72rem);
+    margin: 0 auto;
+    padding: 0.75rem 0 3rem;
+}
+
+.game-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.game-nav a {
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.game-nav a:hover,
+.game-nav a:focus-visible {
+    color: #b9e7d0;
+}
+
+.game-list h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+}
+
+.games-heading {
+    width: 100%;
+    margin-bottom: 1.25rem;
+}
+
+.game-search input {
+    width: 100%;
+    min-height: 3.5rem;
+    padding: 0 4rem 0 1.4rem;
+    border: 0;
+    border-radius: 999px;
+    outline: 0;
+    background: #fff;
+    color: #17231d;
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.2);
+    font: 1.05rem "Trebuchet MS", Verdana, sans-serif;
+}
+
+.game-search input:focus {
+    box-shadow: 0 0 0 3px rgba(185, 231, 208, 0.55);
+}
+
+.game-search input::placeholder {
+    color: #6f675a;
+}
+
+.game-search {
+    display: flex;
+    position: relative;
+}
+
+.game-search button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 0;
+    border-radius: 999px;
+    background: #fff;
+    color: #17231d;
+    cursor: pointer;
+    font-size: 1.35rem;
+}
+
+.game-search button:hover,
+.game-search button:focus-visible {
+    background: #17231d;
+    color: #fff;
+}
+
+.game-circles {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 0.4rem;
+}
+
+.game-circle {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 999px;
+    outline: 0;
+    background: rgba(5, 7, 7, 0.82);
+    color: #fff;
+    cursor: pointer;
+    font: 700 clamp(0.7rem, 1.1vw, 0.9rem)/1.05 "Trebuchet MS", Verdana, sans-serif;
+    text-align: center;
+    transition: background 160ms ease, transform 160ms ease, border-color 160ms ease;
+}
+
+.game-circle span {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.game-circle[hidden] {
+    display: none;
+}
+
+.game-circle:hover,
+.game-circle:focus-visible {
+    border-color: #b9e7d0;
+    background: rgba(5, 7, 7, 0.96);
+    transform: translateY(-0.2rem);
+}
+
+.play-panel {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: clamp(0.75rem, 3vw, 2rem);
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.82);
+}
+
+.play-panel[hidden] {
+    display: none;
+}
+
+.play-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: min(100%, 86rem);
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-bottom: 0;
+    border-radius: 0.65rem 0.65rem 0 0;
+    padding: 0.65rem 0.8rem 0.65rem 1rem;
+    background: rgba(24, 27, 26, 0.96);
+}
+
+.play-toolbar h2 {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.play-actions {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.play-actions button {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.25rem;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    font: 0.7rem "Trebuchet MS", Verdana, sans-serif;
+}
+
+.play-actions button:hover,
+.play-actions button:focus-visible {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+#game-frame {
+    width: 100%;
+    max-width: 86rem;
+    min-height: 0;
+    flex: 1;
+    margin: 0 auto;
+    border-radius: 0 0 0.65rem 0.65rem;
+    border: 0;
+    background: #fff;
+}
+
+@media (max-width: 34rem) {
+    .game-circle {
+        min-height: 2.6rem;
+        padding-right: 0.85rem;
+        padding-left: 0.85rem;
+    }
+
+    .play-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .play-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
